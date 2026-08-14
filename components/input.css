@@ -16,6 +16,8 @@
     background-color: var(--checkmark-color);
     border-color: var(--checkmark-color);
     cursor: pointer;
+
+    transform: scale(1.2);
   }
 }
 

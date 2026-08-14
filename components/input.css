@@ -18,6 +18,8 @@
     cursor: pointer;
 
     transform: scale(1.2);
+    border: solid 2px #0f3380;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   }
 }
 

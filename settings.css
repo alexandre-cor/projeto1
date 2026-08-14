@@ -1,0 +1,9 @@
+:root {
+  --checkmark-color: #2563eb;
+  --checkmark-size: 1rem;
+
+  --checkmark-radius: 4px;
+
+  --font-family: Arial;
+  --font-size: 1rem;
+}

@@ -1,0 +1,28 @@
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+.custom-checkbox>input {
+  position: absolute;
+  opacity: 0;
+
+  &:checked~.checkmark {
+    background-color: var(--checkmark-color);
+    border-color: var(--checkmark-color);
+    cursor: pointer;
+  }
+}
+
+.checkmark {
+  width: var(--checkmark-size);
+  height: var(--checkmark-size);
+  border: 2px solid #d1d5db;
+  border-radius: var(--checkmark-radius);
+  transition: all 0.2s ease;
+}

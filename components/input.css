@@ -20,6 +20,7 @@
 
   &:checked~.checkmark::after {
     display: block;
+    animation: check-pop 1s ease-out;
   }
 }
 
@@ -44,5 +45,17 @@
   border: solid #fff;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(.5) rotate(-45deg);
+  }
+  100% {
+    transform: scale(1) rotate(45deg);
+  }
 }
 

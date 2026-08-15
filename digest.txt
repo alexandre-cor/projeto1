@@ -1,0 +1,166 @@
+Directory structure:
+└── projeto1/
+    ├── elements.css
+    ├── generec.css
+    ├── index.html
+    ├── settings.css
+    ├── style.css
+    └── components/
+        ├── button.css
+        ├── form.css
+        └── input.css
+
+================================================
+FILE: elements.css
+================================================
+/*Estila tags HTML puras, sem classes. É a última camada global antes de entrarmos nos componentes específicos.*
+
+O que vai aqui: Estilos base para h1, p, a, e as tags cruas de formulário (input, select, textarea).*/
+
+
+
+
+================================================
+FILE: generec.css
+================================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+================================================
+FILE: index.html
+================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <form action="">
+      <div class="input-wrapper">
+        <label class="custom-checkbox">
+          <input type="checkbox" name="remember" required="required">
+          <span class="checkmark"></span>
+          Lembrar de mim
+        </label>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
+
+
+================================================
+FILE: settings.css
+================================================
+:root {
+  --checkmark-color: #2563eb;
+  --checkmark-size: 1rem;
+
+  --checkmark-radius: 4px;
+
+  --font-family: Arial;
+  --font-size: 1rem;
+}
+
+
+================================================
+FILE: style.css
+================================================
+@import url(generec.css);
+@import url(settings.css);
+@import url(./components/input.css);
+
+
+================================================
+FILE: components/button.css
+================================================
+/*Aqui o escopo fica totalmente específico. Cada elemento vira uma classe independente que não depende de nenhuma outra tag para funcionar. É aqui que entra o design dos seus inputs e formulários.O que vai aqui: Estilos do formulário container, o estilo visual dos inputs, botões, cards, etc.*/
+
+
+================================================
+FILE: components/form.css
+================================================
+/*Aqui o escopo fica totalmente específico. Cada elemento vira uma classe independente que não depende de nenhuma outra tag para funcionar. É aqui que entra o design dos seus inputs e formulários.O que vai aqui: Estilos do formulário container, o estilo visual dos inputs, botões, cards, etc.*/
+
+
+================================================
+FILE: components/input.css
+================================================
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+.custom-checkbox>input {
+  position: absolute;
+  opacity: 0;
+
+  &:checked~.checkmark {
+    background-color: var(--checkmark-color);
+    border-color: var(--checkmark-color);
+    cursor: pointer;
+  }
+
+  &:checked~.checkmark::after {
+    display: block;
+    animation: check-pop 1s ease-out;
+  }
+}
+
+.checkmark {
+  position: relative;
+  width: var(--checkmark-size);
+  height: var(--checkmark-size);
+  border: 2px solid #d1d5db;
+  border-radius: var(--checkmark-radius);
+  transition: all 0.2s ease;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+
+  left: 2px;
+  top: -2px;
+  width: 4px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(.5) rotate(-45deg);
+  }
+  100% {
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+
+

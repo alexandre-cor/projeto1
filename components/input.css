@@ -17,12 +17,32 @@
     border-color: var(--checkmark-color);
     cursor: pointer;
   }
+
+  &:checked~.checkmark::after {
+    display: block;
+  }
 }
 
 .checkmark {
+  position: relative;
   width: var(--checkmark-size);
   height: var(--checkmark-size);
   border: 2px solid #d1d5db;
   border-radius: var(--checkmark-radius);
   transition: all 0.2s ease;
 }
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+
+  left: 2px;
+  top: -2px;
+  width: 4px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+

@@ -1,0 +1,18 @@
+/*Aqui o escopo fica totalmente específico. Cada elemento vira uma classe independente que não depende de nenhuma outra tag para funcionar. É aqui que entra o design dos seus inputs e formulários.O que vai aqui: Estilos do formulário container, o estilo visual dos inputs, botões, cards, etc.*/
+
+.main-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+
+  background-color: var(--button-color);
+  color: var(--font-color);
+  border-radius: var(--button-radius);
+}

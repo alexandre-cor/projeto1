@@ -1,0 +1,10 @@
+:root {
+  --button-color: #2563eb;
+  --button-size: 1rem;
+  --button-radius: 8px;
+
+  --font-family: Arial;
+  --font-size: 1rem;
+  --font-weight: 600;
+  --font-color: #fff;
+}
